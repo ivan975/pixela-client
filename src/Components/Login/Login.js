@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Contexts/UseContexts';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+
+    const { login } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -10,6 +14,18 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email, password);
+
+        login(email, password)
+            .then(res => {
+                toast.success('Login Successful')
+                const user = res.user;
+                console.log(user);
+                form.reset();
+            }).catch(error => {
+                console.error(error)
+                // setPasswordError(error.message)
+            })
+
     }
 
     return (

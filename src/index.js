@@ -5,13 +5,16 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UseContexts from './Components/Contexts/UseContexts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <ToastContainer position='top-center' />
-    <App />
-  </React.StrictMode>
+  <UseContexts>
+    <React.StrictMode>
+      <ToastContainer position='top-center' />
+      <App />
+    </React.StrictMode>
+  </UseContexts>
 );
 
 // If you want to start measuring performance in your app, pass a function
