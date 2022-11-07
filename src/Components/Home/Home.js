@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { Button } from 'flowbite-react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import wedding from '../../assests/wedding.svg';
 const Home = () => {
     return (
