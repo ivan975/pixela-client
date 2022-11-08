@@ -5,21 +5,21 @@ const Header = () => {
     return (
         <header className="p-4 bg-gray-800 text-gray-100">
             <div className="container flex justify-between h-16 mx-auto">
-                <Link rel="noopener noreferrer" href="/" aria-label="Back to homepage" className="flex items-center p-2 text-4xl font-bold">
+                <Link rel="noopener noreferrer" to="/" aria-label="Back to homepage" className="flex items-center p-2 text-4xl font-bold">
                     Pixelas
                 </Link>
                 <ul className="items-stretch hidden space-x-3 lg:flex">
                     <li className="flex">
-                        <Link rel="noopener noreferrer" href="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-amber-400 dark:border-amber-400">Home</Link>
+                        <Link rel="noopener noreferrer" to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-amber-400 dark:border-amber-400">Home</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" href="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
+                        <Link rel="noopener noreferrer" href="/about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" href="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
+                        <Link rel="noopener noreferrer" href="/blogs" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" href="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Contact Us</Link>
+                        <Link rel="noopener noreferrer" href="/contact" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Contact Us</Link>
                     </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
