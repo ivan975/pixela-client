@@ -66,7 +66,7 @@ const Login = () => {
                 form.reset();
             }).catch(error => {
                 console.error(error)
-                // setPasswordError(error.message)
+                setPasswordError(error.message)
             })
 
     }
@@ -104,6 +104,7 @@ const Login = () => {
                         </svg>
                     </button>
                 </div>
+                <p className='text-red-600'>{passwordError}</p>
                 <p className="text-xs text-center sm:px-6 dark:text-gray-600">Don't have an account?
                     <Link to="/" className="underline dark:text-gray-100">Sign up</Link>
                 </p>
