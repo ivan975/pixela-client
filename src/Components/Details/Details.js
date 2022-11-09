@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReviewDetails from '../ReviewDetails/ReviewDetails';
 
 const Details = () => {
@@ -42,9 +42,13 @@ const Details = () => {
                         </button>
                     </div>
                 </div>
+                <Link to='/addReview'>
+                    <button type="button" className="mt-5 w-full px-8 py-3 font-bold border rounded border-gray-300 dark:text-gray-100">Add Review</button>
+                </Link>
             </div>
             {/* review section */}
             <ReviewDetails />
+
         </div>
     );
 };

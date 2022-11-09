@@ -8,11 +8,7 @@ const PrivateRoute = ({ children }) => {
 
     if (loader) {
         return (
-            <div class="flex items-center justify-center space-x-2 animate-bounce">
-                <div class="w-8 h-8 bg-black rounded-full"></div>
-                <div class="w-8 h-8 bg-black rounded-full"></div>
-                <div class="w-8 h-8 bg-black rounded-full"></div>
-            </div>
+            <div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full animate-spin border-purple-600"></div>
         );
     }
     if (user) {

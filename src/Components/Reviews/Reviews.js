@@ -4,12 +4,12 @@ const Reviews = ({ review }) => {
     const { _id, nome, img, ratings, description } = review;
 
     return (
-        <div className='mx-auto h-screen bg-gray-800'>
-            <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100 h-96">
+        <div className='mx-auto bg-gray-800'>
+            <div className="container flex flex-col w-52 max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100 h-52">
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         <div>
-                            <img src={img} alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            <img src={img} alt="" className="object-cover w-12 h-12 dark:bg-gray-500" />
                         </div>
                         <div>
                             <h4 className="font-bold">{nome}</h4>
