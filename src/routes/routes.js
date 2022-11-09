@@ -4,10 +4,10 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
-import ReviewDetails from "../Components/ReviewDetails/ReviewDetails";
 import Reviews from "../Components/Reviews/Reviews";
 import ServicesDetails from "../Components/ServicesDetails/ServicesDetails";
 import Main from "../layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -26,12 +26,12 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
-                element: <Details />
+                element: <PrivateRoute><Details /></PrivateRoute>
             },
             {
                 path: '/details/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`),
-                element: <Reviews />
+                element: <PrivateRoute><Reviews /></PrivateRoute>
             },
             {
                 path: '/services',
