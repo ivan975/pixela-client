@@ -25,10 +25,10 @@ const Header = () => {
                         <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-amber-400 dark:border-amber-400">Home</Link>
                     </li>
                     <li className="flex">
-                        <Link href="/about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
+                        <Link to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
                     </li>
                     <li className="flex">
-                        <Link href="/blogs" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
+                        <Link to="/blogs" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
                     </li>
                     <li className="flex">
                         <Link href="/contact" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Contact Us</Link>
@@ -40,7 +40,7 @@ const Header = () => {
                                     <Link to="/services" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">My Services</Link>
                                 </li>
                                 <li className="flex">
-                                    <Link to="/service" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Reviews</Link>
+                                    <Link to="/allReviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Reviews</Link>
                                 </li>
                                 <div className="items-center flex-shrink-0 hidden lg:flex">
                                     <button onClick={handleLogOut} className="self-center px-8 py-3 font-semibold rounded dark:bg-amber-400 dark:text-gray-900">

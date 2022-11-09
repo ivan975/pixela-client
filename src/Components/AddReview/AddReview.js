@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AddReview = () => {
@@ -58,9 +57,7 @@ const AddReview = () => {
                         <label for="text" className="block text-gray-800 text-start">Ratings</label>
                         <input type="text" name="ratings" id="ratings" placeholder="Ratings" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                     </div>
-                    {/* <Link> */}
                     <button className="mt-5 block w-full p-3 text-center rounded-sm text-gray-900 bg-yellow-400 font-semibold">Add product</button>
-                    {/* </Link> */}
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>

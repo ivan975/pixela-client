@@ -57,10 +57,10 @@ const Register = () => {
     const handleRegister = e => {
         e.preventDefault();
         const form = e.target;
-        const email = form.username.value;
+        const name = form.username.value;
+        const image = form.image.value;
+        const email = form.email.value;
         const password = form.password.value;
-
-        console.log(email, password);
 
         createUser(email, password)
             .then(res => {
@@ -73,7 +73,6 @@ const Register = () => {
                 console.error(error)
                 setPasswordError(error.message)
             })
-
     }
 
     return (
@@ -83,12 +82,15 @@ const Register = () => {
                 <form onSubmit={handleRegister} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label className="block dark:text-gray-400 text-start">Name</label>
-                        <input onChange={handleEmailChange} type="text" name="email" id="username" placeholder="John Doe" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
-                        {errors.email && <p className="error-message text-red-600">{errors.email}</p>}
+                        <input type="text" name="text" id="username" placeholder="John Doe" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                    </div>
+                    <div className="space-y-1 text-sm">
+                        <label className="block dark:text-gray-400 text-start">Image</label>
+                        <input type="text" name="image" id="image" placeholder="image url" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label className="block dark:text-gray-400 text-start">Email</label>
-                        <input onChange={handleEmailChange} type="text" name="email" id="username" placeholder="john.doe@email.com" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                        <input onChange={handleEmailChange} type="email" name="email" id="email" placeholder="john.doe@email.com" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                         {errors.email && <p className="error-message text-red-600">{errors.email}</p>}
                     </div>
                     <div className="space-y-1 text-sm">
@@ -100,17 +102,10 @@ const Register = () => {
                         </div>
                         <p className='text-red-600'>{passwordError}</p>
                     </div>
-                    <div className="space-y-1 text-sm">
-                        <label for="password" className="block dark:text-gray-400 text-start">Confirm password</label>
-                        <input onChange={handlePasswordChange} type="password" name="password" id="password" placeholder="Confirm password" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
-                        {errors.password && <p className="error-message text-red-600">{errors.password}</p>}
-                        <p className='text-red-600'>{passwordError}</p>
-                    </div>
-
-                    <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-white font-bold">Sign in</button>
+                    <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-white font-bold">Sign up</button>
                 </form>
                 <p className="text-xs text-center sm:px-6 text-gray-800 font-bold mt-2">Already have an account?
-                    <Link to='/login' className="underline font-bold text-gray-100">Sign up</Link>
+                    <Link to='/login' className="underline font-bold text-gray-100">Sign in</Link>
                 </p>
             </div>
         </section>
