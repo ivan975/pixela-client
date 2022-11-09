@@ -77,13 +77,18 @@ const Register = () => {
     }
 
     return (
-        <section className="bg-gray-800 text-gray-100">
+        <section className="bg-gray-800 text-gray-100 h-screen">
             <div className=" w-full max-w-md p-8 mx-auto rounded-xl bg-cyan-400 text-white">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleRegister} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
+                        <label className="block dark:text-gray-400 text-start">Name</label>
+                        <input onChange={handleEmailChange} type="text" name="email" id="username" placeholder="John Doe" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                        {errors.email && <p className="error-message text-red-600">{errors.email}</p>}
+                    </div>
+                    <div className="space-y-1 text-sm">
                         <label className="block dark:text-gray-400 text-start">Email</label>
-                        <input onChange={handleEmailChange} type="text" name="email" id="username" placeholder="email" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                        <input onChange={handleEmailChange} type="text" name="email" id="username" placeholder="john.doe@email.com" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                         {errors.email && <p className="error-message text-red-600">{errors.email}</p>}
                     </div>
                     <div className="space-y-1 text-sm">
@@ -95,10 +100,17 @@ const Register = () => {
                         </div>
                         <p className='text-red-600'>{passwordError}</p>
                     </div>
+                    <div className="space-y-1 text-sm">
+                        <label for="password" className="block dark:text-gray-400 text-start">Confirm password</label>
+                        <input onChange={handlePasswordChange} type="password" name="password" id="password" placeholder="Confirm password" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                        {errors.password && <p className="error-message text-red-600">{errors.password}</p>}
+                        <p className='text-red-600'>{passwordError}</p>
+                    </div>
+
                     <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-white font-bold">Sign in</button>
                 </form>
-                <p className="text-xs text-center sm:px-6 text-gray-800 font-bold">Already have an account?
-                    <Link to='/login' className="underline font-bold text-gray-100">Sign in</Link>
+                <p className="text-xs text-center sm:px-6 text-gray-800 font-bold mt-2">Already have an account?
+                    <Link to='/login' className="underline font-bold text-gray-100">Sign up</Link>
                 </p>
             </div>
         </section>

@@ -21,6 +21,9 @@ const Header = () => {
                     <li className="flex">
                         <Link href="/contact" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Contact Us</Link>
                     </li>
+                    <li className="flex">
+                        <Link href="/service" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Services</Link>
+                    </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
                     <button className="self-center px-8 py-3 rounded">
