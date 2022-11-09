@@ -1,21 +1,22 @@
 import React from 'react';
 import './Home.css';
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import wedding from '../../assests/wedding.svg';
 import ServicesDetails from '../ServicesDetails/ServicesDetails';
+
 const Home = () => {
 
     return (
-        <div>
+        <div className='h-screen'>
             <div className="bg-gray-800 text-gray-100 h-screen">
                 <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                     <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left ml-52">
                         <h1 className="text-5xl font-bold leading-none sm:text-6xl">Wedding
-                            <span className="dark:text-violet-400"> Photography</span></h1>
-                        <p className="mt-6 mb-8 text-lg sm:mb-12">Photography is my passion and I like to take photos of newly married couple.I have experience of almost 6 years of this.I have two shops one in Bangladesh and another one is in Italy.Currently, There are almost 10 other photographers are working with me.</p>
+                            <span className="dark:text-violet-400"> Planner</span></h1>
+                        <p className="mt-6 mb-8 text-lg sm:mb-12">I like to arrange parties.I have experience of almost 6 years of this.I have two shops one in Bangladesh and another one is in Italy.Currently, There are almost 10 other photographers are working with me.</p>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                            <button type="button" className="px-8 py-3 font-semibold rounded-full text-gray-200 bg-yellow-500">Get Started
+                            <button type="button" className="px-8 py-3 font-semibold rounded-full text-gray-700 bg-yellow-500">Get Started
                             </button>
                         </div>
                     </div>
@@ -43,6 +44,7 @@ const Home = () => {
             </section>
             {/* services part */}
             <div className='bg-gray-800'>
+                <h1 className='text-white text-3xl font-bold pt-6'>Services</h1>
                 <ServicesDetails />
                 <Link to='/services'>
                     <button type="button" className="mb-12 px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">See All</button>

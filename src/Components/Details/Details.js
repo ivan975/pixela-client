@@ -1,13 +1,12 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import ReviewDetails from '../ReviewDetails/ReviewDetails';
 
 const Details = () => {
     const details = useLoaderData();
-
     return (
-        <div className='bg-gray-800 h-screen'>
+        <div className='bg-gray-800 h-screen flex'>
             <div className="flex flex-col max-w-lg p-6 mx-auto overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
-
                 <div>
                     <img src={details.image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
                     <h2 className="mb-1 text-xl font-semibold">{details.name}</h2>
@@ -44,6 +43,8 @@ const Details = () => {
                     </div>
                 </div>
             </div>
+            {/* review section */}
+            <ReviewDetails />
         </div>
     );
 };

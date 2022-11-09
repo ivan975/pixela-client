@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Services = ({ service }) => {
     const { _id, name, price, description, image } = service;
-    console.log(name);
+
     return (
         <div>
             <div className="max-w-lg p-4 text-gray-100 mr-12">
@@ -24,7 +24,7 @@ const Services = ({ service }) => {
                             <h3 className="text-xl font-semibold text-purple-400">{name}</h3>
                         </Link>
                         <p className="leading-snug text-gray-400">{description}</p>
-                        <Link to={`../details/${_id}`} type="button" className="px-8 py-3 font-semibold rounded-full bg-gray-100 text-gray-800">View details</Link>
+                        <Link to={`../details/${_id}`} type="button" className="px-8 py-3 mr-5 font-semibold rounded-full bg-gray-100 text-gray-800">View details</Link>
                     </div>
                 </div>
             </div>
