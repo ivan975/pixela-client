@@ -44,6 +44,9 @@ const Home = () => {
             {/* services part */}
             <div className='bg-gray-800'>
                 <ServicesDetails />
+                <Link to='/services'>
+                    <button type="button" className="mb-12 px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">See All</button>
+                </Link>
             </div>
             <Footer />
         </div >
