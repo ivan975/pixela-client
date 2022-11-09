@@ -28,12 +28,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({ params }) => fetch(`https:/assignment-11-server-zeta.vercel.app/services/${params.id}`),
                 element: <PrivateRoute><Details /></PrivateRoute>
             },
             {
                 path: '/details/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`),
+                loader: ({ params }) => fetch(`https:/assignment-11-server-zeta.vercel.app/review/${params.id}`),
                 element: <PrivateRoute><Reviews /></PrivateRoute>
             },
             {

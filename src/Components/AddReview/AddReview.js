@@ -13,7 +13,7 @@ const AddReview = () => {
             description: form.description.value,
             ratings: form.ratings.value
         };
-        fetch('http://localhost:5000/review', {
+        fetch('https:/assignment-11-server-zeta.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
