@@ -5,7 +5,7 @@ const ServicesDetails = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https:/assignment-11-server-zeta.vercel.app/service')
+        fetch('https://pixelas-authentication.web.app/service')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
@@ -24,3 +24,5 @@ const ServicesDetails = () => {
 };
 
 export default ServicesDetails;
+
+// https://pixelas-authentication.web.app

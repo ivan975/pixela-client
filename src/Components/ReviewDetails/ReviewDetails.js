@@ -5,7 +5,7 @@ const ReviewDetails = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https:/assignment-11-server-zeta.vercel.app/review')
+        fetch('https://pixelas-authentication.web.app/review')
             .then(res => res.json())
             .then(data => setReviews(data));
     }, [])
