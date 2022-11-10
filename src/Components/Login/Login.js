@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UseContexts';
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-
+    useTitle('Login');
     const { login } = useContext(AuthContext);
     const [userEmail, setUserEmail] = useState('');
     const [passwordError, setPasswordError] = useState('');

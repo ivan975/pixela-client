@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UseContexts';
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+    useTitle('Sign Up')
     const { createUser } = useContext(AuthContext);
     const [passwordError, setPasswordError] = useState('');
 

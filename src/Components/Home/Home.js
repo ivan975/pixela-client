@@ -4,8 +4,10 @@ import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import wedding from '../../assests/wedding.svg';
 import ServicesDetails from '../ServicesDetails/ServicesDetails';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home');
 
     return (
         <div className='h-screen'>
