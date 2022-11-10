@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../Contexts/UseContexts';
 
 const AddReview = () => {
+
+    const { user } = useContext(AuthContext);
 
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
 
         const review = {
-            name: form.name.value,
+            name: user.email,
             image: form.image.value,
             description: form.description.value,
             ratings: form.ratings.value
         };
+        console.log(review);
         fetch('https://assignment-11-server-zeta.vercel.app/review', {
             method: 'POST',
             headers: {
@@ -32,9 +36,7 @@ const AddReview = () => {
             .catch(err => {
                 toast.error(err.message);
             })
-
     }
-
 
     return (
         <div className="bg-gray-800 text-gray-100 h-screen">

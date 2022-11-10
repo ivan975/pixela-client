@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Reviews = ({ review }) => {
-    const { _id, nome, img, ratings, description } = review;
+    const { nome, img, ratings, description } = review;
 
     return (
         <div className='mx-auto bg-gray-800'>

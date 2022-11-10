@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../Contexts/UseContexts';
 
 const AllReviews = () => {
 
     const [reviews, setReviews] = useState([]);
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         fetch('https://assignment-11-server-zeta.vercel.app/review')
@@ -30,8 +32,7 @@ const AllReviews = () => {
                     <thead className="dark:bg-gray-700">
                         <tr className="text-left">
                             <th className="p-3">ID</th>
-                            <th className="p-3">Name</th>
-                            <th className="p-3">Images</th>
+                            <th className="p-3">Service name</th>
                             <th className="p-3">Description</th>
                             <th className="p-3 text-right">Ratings</th>
                             <th className="p-3">Action</th>
@@ -39,32 +40,28 @@ const AllReviews = () => {
                     </thead>
                     <tbody>
                         {
-                            reviews.map(review => {
-                                return (
-                                    <tr className="border-b border-opacity-20 text-white dark:border-gray-700 dark:bg-gray-900">
-                                        <td className="p-3">
-                                            <p>{review._id}</p>
-                                        </td>
-                                        <td className="p-3">
-                                            <p>{review.nome}</p>
-                                        </td>
-                                        <td className="p-3">
-                                            <img src={review.img} alt="" className="block object-cover object-center rounded-md h-10 w-10 bg-gray-500" />
-                                        </td>
-                                        <td className="p-3">
-                                            <p>{review.description}</p>
-                                        </td>
-                                        <td className="p-3 text-right">
-                                            <p>{review.rating}</p>
-                                        </td>
-                                        <td className="p-3 text-right">
-                                            <span className="px-3 py-1 font-semibold rounded-md dark:bg-purple-400 dark:text-gray-900">
-                                                <span></span>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                )
-                            })
+                            <tr className="border-b border-opacity-20 text-white dark:border-gray-700 dark:bg-gray-900">
+                                <td className="p-3">
+                                    <p>{user.uid}</p>
+                                </td>
+                                <td className="p-3">
+                                    <p>{user.email}</p>
+                                </td>
+                                <td className="p-3">
+                                    <img src={user.img} alt="" className="block object-cover object-center rounded-md h-10 w-10 bg-gray-500" />
+                                </td>
+                                <td className="p-3">
+                                    <p>{user.description}</p>
+                                </td>
+                                <td className="p-3 text-right">
+                                    <p>{user.rating}</p>
+                                </td>
+                                <td className="p-3 text-right">
+                                    <span className="px-3 py-1 font-semibold rounded-md dark:bg-purple-400 dark:text-gray-900">
+                                        <span></span>
+                                    </span>
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
