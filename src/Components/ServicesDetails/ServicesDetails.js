@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 import Services from '../Services/Services';
 
 const ServicesDetails = () => {
+    useTitle('Services')
     const [services, setServices] = useState([]);
-
     useEffect(() => {
         fetch('https://assignment-11-server-zeta.vercel.app/service')
             .then(res => res.json())
