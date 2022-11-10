@@ -54,7 +54,8 @@ const Home = () => {
                     </Link>
                 </div>
             </section>
-            <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+            {/* contact us part */}
+            <section className="py-6 dark:bg-gray-800 dark:text-gray-50 flex flex-col flex-wrap">
                 <h2 className=' text-white text-3xl font-bold pt-6 mb-6'>Contact Us</h2>
                 <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                     <div className="py-6 md:py-0 md:px-6">
