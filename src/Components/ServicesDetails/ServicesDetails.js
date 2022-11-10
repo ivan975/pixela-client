@@ -5,9 +5,9 @@ const ServicesDetails = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://pixelas-authentication.web.app/service')
+        fetch('https://assignment-11-server-zeta.vercel.app/service')
             .then(res => res.json())
-            .then(data => setServices(data));
+            .then(data => setServices(data))
     }, [])
     return (
         <div className='bg-gray-800 h-screen'>
