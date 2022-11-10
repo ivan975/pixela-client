@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import wedding from '../../assests/wedding.svg';
 import ServicesDetails from '../ServicesDetails/ServicesDetails';
 import useTitle from '../../hooks/useTitle';
+import AllServiceDetails from '../AllServiceDetails/AllServiceDetails';
 
 const Home = () => {
     useTitle('Home');
@@ -49,8 +50,9 @@ const Home = () => {
                 <div className='bg-gray-800'>
                     <h1 className='text-white text-3xl font-bold pt-6'>Services</h1>
                     <ServicesDetails />
-                    <Link to='/services'>
+                    <Link to=''>
                         <button type="button" className="mb-12 px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">See All</button>
+                        {/* <AllServiceDetails /> */}
                     </Link>
                 </div>
             </section>

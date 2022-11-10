@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
-const Services = ({ service }) => {
-    useTitle('Services')
-    const { _id, name, price, description, image } = service;
+const AllServiceDetails = ({ allService }) => {
+    useTitle('All Services')
+    const { name, price, description, image } = allService;
+    console.log(allService);
 
     return (
         <div>
@@ -26,7 +27,6 @@ const Services = ({ service }) => {
                             <h3 className="text-xl font-semibold text-purple-400">{name}</h3>
                         </Link>
                         <p className="leading-snug text-gray-400">{description}</p>
-                        <Link to={`../details/${_id}`} type="button" className="px-8 py-3 mr-5 font-semibold rounded-full bg-gray-100 text-gray-800">View details</Link>
                     </div>
                 </div>
             </div>
@@ -34,4 +34,4 @@ const Services = ({ service }) => {
     );
 };
 
-export default Services;
+export default AllServiceDetails;

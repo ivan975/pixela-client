@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Contexts/UseContexts';
 
@@ -18,7 +18,6 @@ const AddReview = () => {
             serviceName: form.name.value,
             email: user?.email || 'unregistered',
             description: form.description.value,
-            ratings: form.ratings.value,
         };
         console.log(review);
 
@@ -52,15 +51,11 @@ const AddReview = () => {
                 <form onSubmit={handleSubmit} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label className="block text-gray-800 text-start">Service Name</label>
-                        <input type="text" name="name" id="name" placeholder="Flora Design" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                        <input type="text" name="name" id="name" placeholder="Floral Design" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="text" className="block text-gray-800 text-start">Description</label>
                         <input type="text" name="description" id="description" placeholder="description" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
-                    </div>
-                    <div className="space-y-1 text-sm">
-                        <label for="text" className="block text-gray-800 text-start">Ratings</label>
-                        <input type="text" name="ratings" id="ratings" placeholder="Ratings" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                     </div>
                     <button className="mt-5 block w-full p-3 text-center rounded-sm text-gray-900 bg-yellow-400 font-semibold">Add review</button>
                 </form>
