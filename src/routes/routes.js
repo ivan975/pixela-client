@@ -45,6 +45,11 @@ export const router = createBrowserRouter([
                 element: <AddReview />
             },
             {
+                path: '/addReview/:id',
+                loader: ({ params }) => fetch(`https://assignment-11-server-zeta.vercel.app/service/${params.id}`),
+                element: <AddReview />
+            },
+            {
                 path: '/allReviews',
                 element: <AllReviews />
             },

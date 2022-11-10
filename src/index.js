@@ -10,10 +10,8 @@ import UseContexts from './Components/Contexts/UseContexts';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <UseContexts>
-    <React.StrictMode>
-      <ToastContainer position='top-center' />
-      <App />
-    </React.StrictMode>
+    <ToastContainer position='top-center' />
+    <App />
   </UseContexts>
 );
 
