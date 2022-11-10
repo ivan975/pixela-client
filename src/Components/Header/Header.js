@@ -40,6 +40,9 @@ const Header = () => {
                                     <Link to="/services" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">My Services</Link>
                                 </li>
                                 <li className="flex">
+                                    <Link to="/addService" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Add Services</Link>
+                                </li>
+                                <li className="flex">
                                     <Link to="/allReviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Reviews</Link>
                                 </li>
                                 <div className="items-center flex-shrink-0 hidden lg:flex">

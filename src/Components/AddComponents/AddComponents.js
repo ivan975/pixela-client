@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { AuthContext } from '../Contexts/UseContexts';
 
-const AddReview = () => {
-
-    const { user } = useContext(AuthContext);
+const AddComponents = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -14,24 +11,23 @@ const AddReview = () => {
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
-        const review = {
-            serviceName: form.name.value,
-            email: user?.email || 'unregistered',
-            description: form.description.value,
+        const service = {
+            name: form.name.value,
+            price: parseInt(e.target.price.value),
+            image: form.image.value,
+            description: form.description.value
         };
-        console.log(review);
-
-        fetch('https://assignment-11-server-zeta.vercel.app/review', {
+        fetch('https://assignment-11-server-zeta.vercel.app/service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(service)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast.success('Review Added Successfully');
+                    toast.success('service Added Successfully');
                     form.reset();
                     navigate(from, { replace: true })
                 }
@@ -57,7 +53,15 @@ const AddReview = () => {
                         <label for="text" className="block text-gray-800 text-start">Description</label>
                         <input type="text" name="description" id="description" placeholder="description" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
                     </div>
-                    <button className="mt-5 block w-full p-3 text-center rounded-sm text-gray-900 bg-yellow-400 font-semibold">Add review</button>
+                    <div className="space-y-1 text-sm">
+                        <label for="text" className="block text-gray-800 text-start">Image</label>
+                        <input type="text" name="image" id="image" placeholder="image url" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                    </div>
+                    <div className="space-y-1 text-sm">
+                        <label for="text" className="block text-gray-800 text-start">Description</label>
+                        <input type="text" name="price" id="price" placeholder="$50000" className="w-full px-4 py-3 rounded-md text-black focus:dark:border-amber-400" />
+                    </div>
+                    <button className="mt-5 block w-full p-3 text-center rounded-sm text-gray-900 bg-yellow-400 font-semibold">Add service</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
@@ -68,4 +72,4 @@ const AddReview = () => {
     );
 };
 
-export default AddReview;
+export default AddComponents;
