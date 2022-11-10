@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useTitle from '../../hooks/useTitle';
 
@@ -33,6 +34,12 @@ const AllReviews = () => {
             .catch(err => toast.error(err.message))
 
     };
+
+    const navigate = useNavigate();
+    const handleUpdate = (id) => {
+        navigate(`/review/edit/${id}`)
+    }
+
     return (
         <div className="h-screen bg-gray-800 container p-2 mx-auto sm:p-4 dark:text-gray-100">
             <h2 className="mb-4 text-2xl font-semibold leading-tight">Reviews</h2>
@@ -66,7 +73,7 @@ const AllReviews = () => {
                                         </td>
                                         <td className="p-3 text-right">
                                             <span className="px-3 py-1 font-semibold rounded-md dark:bg-purple-400 dark:text-gray-900 mr-2">
-                                                <span>Update</span>
+                                                <button onClick={() => handleUpdate(review._id)}>Update</button>
                                             </span>
                                             <span className="px-3 py-1 font-semibold rounded-md dark:bg-purple-400 dark:text-gray-900">
                                                 <button onClick={() => handleDelete(review._id)}>Delete</button>

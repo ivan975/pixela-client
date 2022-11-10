@@ -10,6 +10,7 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import Reviews from "../Components/Reviews/Reviews";
 import ServicesDetails from "../Components/ServicesDetails/ServicesDetails";
+import UpdateReview from "../Components/UpdateReview/UpdateReview";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
             {
                 path: '/allReviews',
                 element: <AllReviews />
+            },
+            {
+                path: '/review/edit/:id',
+                element: <UpdateReview />
             },
             {
                 path: '/login',
