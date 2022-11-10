@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewDetails from '../ReviewDetails/ReviewDetails';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Details = () => {
     const details = useLoaderData();
@@ -8,7 +10,11 @@ const Details = () => {
         <div className='bg-gray-800 h-screen flex'>
             <div className="flex flex-col max-w-lg p-6 mx-auto overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                 <div>
-                    <img src={details.image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                    <PhotoProvider>
+                        <PhotoView src={details.image}>
+                            <img src={details.image} style={{ objectFit: 'cover' }} alt="" />
+                        </PhotoView>
+                    </PhotoProvider>
                     <h2 className="mb-1 text-xl font-semibold">{details.name}</h2>
                     <p className="text-sm dark:text-gray-400">{details.description}.</p>
                 </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Services = ({ service }) => {
     useTitle('Services')
@@ -16,7 +18,11 @@ const Services = ({ service }) => {
                 </div>
                 <div className="space-y-4">
                     <div className="space-y-2">
-                        <img src={image} alt="" className="block object-cover object-center w-full rounded-md h-72 bg-gray-500" />
+                        <PhotoProvider>
+                            <PhotoView src={image}>
+                                <img src={image} style={{ objectFit: 'cover' }} alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
                         <div className="flex items-center">
                             <span>{price} bucks</span>
                         </div>
